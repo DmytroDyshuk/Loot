@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/lootListFragment">
+
+    <fragment
+        android:id="@+id/lootListFragment"
+        android:name="com.example.loot.ui.fragments.LootListFragment"
+        android:label="Loot"
+        tools:layout="@layout/fragment_loot_list" />
+</navigation>
