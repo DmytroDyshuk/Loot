@@ -9,5 +9,16 @@
         android:id="@+id/lootListFragment"
         android:name="com.example.loot.ui.fragments.LootListFragment"
         android:label="Loot"
-        tools:layout="@layout/fragment_loot_list" />
+        tools:layout="@layout/fragment_loot_list">
+        <action
+            android:id="@+id/action_lootListFragment_to_addLootFragment"
+            app:destination="@id/addLootFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addLootFragment"
+        android:name="com.example.loot.ui.fragments.AddLootFragment"
+        android:label="Add Loot"
+        tools:layout="@layout/fragment_add_loot"/>
+
 </navigation>
