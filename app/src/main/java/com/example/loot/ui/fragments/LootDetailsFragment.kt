@@ -27,7 +27,7 @@ class LootDetailsFragment : Fragment() {
     private var _binding: FragmentLootDetailsBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentLootDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,6 +41,11 @@ class LootDetailsFragment : Fragment() {
                  bind()
              }
          }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun bind() {

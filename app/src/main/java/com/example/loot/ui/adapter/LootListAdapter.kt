@@ -10,12 +10,12 @@ import com.example.loot.model.Loot
 
 class LootListAdapter(private val clickListener: (Loot) -> Unit) : ListAdapter<Loot, LootListAdapter.LootViewHolder>(DiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LootListAdapter.LootViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LootViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return LootViewHolder(ListItemLootBinding.inflate(layoutInflater, parent, false))
     }
 
-    override fun onBindViewHolder(holder: LootListAdapter.LootViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LootViewHolder, position: Int) {
         val loot = getItem(position)
         holder.itemView.setOnClickListener {
             clickListener(loot)

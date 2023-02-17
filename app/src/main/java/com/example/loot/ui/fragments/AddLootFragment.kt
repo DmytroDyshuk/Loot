@@ -29,7 +29,7 @@ class AddLootFragment: Fragment() {
     private var _binding: FragmentAddLootBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentAddLootBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -58,23 +58,6 @@ class AddLootFragment: Fragment() {
         _binding = null
     }
 
-    private fun deleteLoot(loot: Loot) {
-        viewModel.deleteLoot(loot)
-        findNavController().navigate(R.id.action_addLootFragment_to_lootListFragment)
-    }
-
-    private fun addLoot() {
-        if (isValidEntry()) {
-            viewModel.addLoot(
-                binding.titNameInput.text.toString(),
-                binding.titLocationInput.text.toString(),
-                binding.cbCurrentlyInSeason.isChecked,
-                binding.titNotesInput.text.toString()
-            )
-            findNavController().navigate(R.id.action_addLootFragment_to_lootListFragment)
-        }
-    }
-
     private fun bindLoot() {
         binding.apply {
             titNameInput.setText(loot.name, TextView.BufferType.SPANNABLE)
@@ -96,6 +79,23 @@ class AddLootFragment: Fragment() {
             )
             findNavController().navigate(R.id.action_addLootFragment_to_lootListFragment)
         }
+    }
+
+    private fun addLoot() {
+        if (isValidEntry()) {
+            viewModel.addLoot(
+                binding.titNameInput.text.toString(),
+                binding.titLocationInput.text.toString(),
+                binding.cbCurrentlyInSeason.isChecked,
+                binding.titNotesInput.text.toString()
+            )
+            findNavController().navigate(R.id.action_addLootFragment_to_lootListFragment)
+        }
+    }
+
+    private fun deleteLoot(loot: Loot) {
+        viewModel.deleteLoot(loot)
+        findNavController().navigate(R.id.action_addLootFragment_to_lootListFragment)
     }
 
     private fun isValidEntry() = viewModel.isValidEntry(
