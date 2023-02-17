@@ -13,12 +13,34 @@
         <action
             android:id="@+id/action_lootListFragment_to_addLootFragment"
             app:destination="@id/addLootFragment" />
+        <action
+            android:id="@+id/action_lootListFragment_to_lootDetailsFragment"
+            app:destination="@+id/lootDetailsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/addLootFragment"
         android:name="com.example.loot.ui.fragments.AddLootFragment"
         android:label="Add Loot"
-        tools:layout="@layout/fragment_add_loot"/>
+        tools:layout="@layout/fragment_add_loot" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lootDetailsFragment"
+        android:name="com.example.loot.ui.fragments.LootDetailsFragment"
+        android:label="fragment_loot_details"
+        tools:layout="@layout/fragment_loot_details">
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_lootDetailsFragment_to_addLootFragment"
+            app:destination="@+id/addLootFragment" />
+    </fragment>
 
 </navigation>

@@ -4,6 +4,7 @@
     <string name="loot_name">Name</string>
     <string name="loot_location">Location</string>
     <string name="currently_in_season">Currently in season</string>
+    <string name="out_of_season">Currently out of season</string>
     <string name="loot_notes">Notes</string>
     <string name="save">Save</string>
 </resources>
