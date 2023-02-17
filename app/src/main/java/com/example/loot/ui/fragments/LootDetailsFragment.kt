@@ -35,12 +35,12 @@ class LootDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.id
-         viewModel.retrieveLoot(id).observe(viewLifecycleOwner) {
+         viewModel.retrieveLoot(id).observe(this.viewLifecycleOwner) {
              it.let {
                  loot = it
+                 bind()
              }
          }
-        bind()
     }
 
     private fun bind() {

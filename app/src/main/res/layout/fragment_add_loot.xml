@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tit_name_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textAutoComplete"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tit_location_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textAutoComplete"
@@ -61,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cb_currently_in_season">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tit_notes_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textAutoComplete"
@@ -74,7 +77,18 @@
         android:layout_height="wrap_content"
         android:text="@string/save"
         app:layout_constraintTop_toBottomOf="@id/til_notes"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/til_notes"
+        app:layout_constraintStart_toEndOf="@+id/btn_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

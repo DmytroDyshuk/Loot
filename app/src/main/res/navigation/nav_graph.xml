@@ -27,12 +27,15 @@
             android:name="id"
             app:argType="long"
             android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_addLootFragment_to_lootListFragment"
+            app:destination="@+id/lootListFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/lootDetailsFragment"
         android:name="com.example.loot.ui.fragments.LootDetailsFragment"
-        android:label="fragment_loot_details"
+        android:label="Loot details"
         tools:layout="@layout/fragment_loot_details">
         <argument
             android:name="id"

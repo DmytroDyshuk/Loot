@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.loot.BaseApplication
 import com.example.loot.R
 import com.example.loot.databinding.FragmentLootListBinding
@@ -34,6 +35,8 @@ class LootListFragment: Fragment() {
             val action = LootListFragmentDirections.actionLootListFragmentToLootDetailsFragment(loot.id)
             findNavController().navigate(action)
         }
+        binding.rvLootList.adapter = adapter
+        binding.rvLootList.layoutManager = LinearLayoutManager(this.context)
         viewModel.allLoot.observe(this.viewLifecycleOwner) { listLoot ->
             listLoot.let {
                 adapter.submitList(it)

@@ -21,8 +21,8 @@ class LootViewModel(private val lootDao: LootDao): ViewModel() {
         }
     }
 
-    fun updateLoot(name: String, address: String, inSeason: Boolean, notes: String) {
-        val loot = Loot(name = name, address = address, inSeason = inSeason, notes = notes)
+    fun updateLoot(id: Long, name: String, address: String, inSeason: Boolean, notes: String) {
+        val loot = Loot(id = id, name = name, address = address, inSeason = inSeason, notes = notes)
         viewModelScope.launch(Dispatchers.IO) {
             lootDao.updateLoot(loot)
         }
@@ -32,6 +32,10 @@ class LootViewModel(private val lootDao: LootDao): ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             lootDao.deleteLoot(loot)
         }
+    }
+
+    fun isValidEntry(name: String, address: String): Boolean {
+        return name.isNotBlank() && address.isNotBlank()
     }
 
     class LootViewModelFactory(private val lootDao: LootDao): ViewModelProvider.Factory {
